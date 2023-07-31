@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html xmlns:left-margin="http://www.w3.org/1999/xhtml" xmlns:font-weight="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset = "utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            margin: 0;
+        }
+        #header{
+            width: 100%;
+            height : 80px;
+            background-color : rgba(100, 148, 237, 0.364);
+            font-family: 'Noto Sans KR', sans-serif;
+            color : #4B6BA0;
+            font-size : 15pt;
+            font-weight: 700;
+            align-items: center;
+            justify-content: center;
+            display : flex;
+        }
+
+        #section{
+            width : 50%;
+        }
+        #section2{
+            width : 50%;
+        }
+
+        .noonsong{
+            display :  block;
+            margin-left : auto;
+            margin-right : auto;
+            text-align: center;
+        }
+
+        .text{
+            font-family: 'Noto Sans KR', sans-serif;
+            align-items: center;
+            justify-content: center;
+            display : flex;
+        }
+
+        pre{
+            font-size:20px;
+            font-family: 'Noto Sans KR', sans-serif;
+            align-items: center;
+            justify-content: center;
+            display : flex;
+        }
+
+        #box{
+            width : 550px;
+            height:30px;
+            background-color:rgb(248, 168, 181) ;
+            margin-top : 20px;
+            margin-left : 15%;
+            margin-right: 15%;
+        }
+        #box2{
+            width : 550px;
+            height:30px;
+            background-color:rgb(248, 168, 181) ;
+            margin-top : 20px;
+            margin-left : 15%;
+            margin-right: 15%;
+        }
+
+        footer{
+            height : 80px;
+            background-color : rgba(100, 148, 237, 0.364);
+            width : 100%;
+            bottom : 0px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+<div id = "page_weather_ootd">
+    <header id = "header">
+        날씨의 눈송
+    </header>
+
+    <section id = "section" style = "float : left;">
+        <div style = "font-size:14pt; font-weight: 700;" class = "text">
+            <div id="current_date">
+                <script>
+                    date = new Date();
+                    //year = date.getFullYear();
+                    month = date.getMonth() + 1;
+                    day = date.getDate();
+                    document.getElementById("current_date").innerHTML = "오늘은 "+month + "월 " + day + "일";
+                </script></div>
+        </div>
+
+        <div style="font-size:11pt; font-weight: 400;", class = "text">
+            <h3 th:text="${skyInfo}"></h3>
+        </div>
+        <div class = "noonsong">
+            <img src = "character_new08.png">
+        </div>
+
+        <div class = "text">
+            <p>TOP : <br>OUTER : <br>BOTTOM : <br> POINT :</p>
+        </div>
+    </section>
+
+<!--    <section2 id = "section2" style = "float : right;">
+        <div style = "font-size:14pt; font-weight: 700;" class = "text">
+            <p>최고 highest 최저 lowest</p>
+        </div>-->
+        <div style="font-size:11pt; font-weight: 400;;", class = "text">
+            <p style=font-size:20px;>시간대별 날씨</p>
+        </div>
+    <pre th:text="${weatherInfo}"></pre>
+<!--        <div id = "box2">
+        </div>-->
+<!--
+        <div style = "margin-top : 100px;" id = "box">
+        </div>-->
+
+    </section2>
+</div>
+
+<footer></footer>
+</body>
+</html>
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Information</title>
+</head>
+<body>
+<h2>주간 기온 정보 + OOTD</h2>
+<pre th:text="${skyInfo}"></pre>
+<pre th:text="${weatherInfo}"></pre>
+<div id="current_date"></p>
+    <script>
+        document.getElementById("current_date").innerHTML = Date();
+    </script>
+</div>
+</body>
+</html>-->
