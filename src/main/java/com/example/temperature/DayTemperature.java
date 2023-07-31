@@ -117,7 +117,6 @@ public class DayTemperature {
                 }
             }
 
-
             /*int[] tems = new int[6];
             for(int j=0; j<6; j++) {
                 tems[j] = Integer.parseInt(fcstValue);

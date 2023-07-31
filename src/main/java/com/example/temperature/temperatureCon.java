@@ -115,7 +115,6 @@ public class temperatureCon {
             return "error";
         }
     }
-
     /*Ncst category 순서
     PYT 강수형태
     REH 습도
