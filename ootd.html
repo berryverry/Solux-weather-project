@@ -18,9 +18,11 @@
         font-family: 'Noto Sans KR', sans-serif;
     }
     time {
-        font-size: 16px; /* 원하는 글자 크기로 변경합니다. */
+        font-size: 30px; /* 원하는 글자 크기로 변경합니다. */
         font-weight: bold; /* 원하는 글자 두께로 변경합니다. */
         font-family: 'Noto Sans KR', sans-serif;
+        margin-top: 200px;
+        margin-left: 185px
     }
 </style>
 <body>
@@ -47,17 +49,14 @@
                 document.getElementById("current_date").innerHTML = "오늘은 "+month + "월 " + day + "일";
             </script></div></p>
         </div>
-
-        <div style="font-size:11pt; font-weight: 400;;", class = "text">
+        <div style="font-size:11pt; font-weight: 400;", class = "text">
             <p><h3 th:text="${skyInfo}"></h3></p>
         </div>
-
         <div id = "box">
-
             <div class = "noonsong">
-                <img src = "./character_new08.jpg">
+                <img src = "./summer_ns.png" style="margin-top: 60px;">
             </div>
-            <div class = "text_box">
+            <div class = "text_box" style="margin-top: 150px; margin-right: 40px">
                 <p>OUTER: <span th:text="${outer}"></span>
                     <br>TOP: <span th:text="${top}"></span>
                     <br>BOTTOM: <span th:text="${bottom}"></span>
@@ -67,9 +66,9 @@
     </section>
     <section id = "section" style="float : right;">
         <div id = "box">
-            <div style="font-size:11pt; font-weight: 400;;", class = "text_box">
-                <p><time>시간대별 날씨</time></p>
-                <p><pre th:text="${weatherInfo}"></pre></p>
+            <div style="font-size:11pt; font-weight: 400;", class = "text_box">
+                <br><p><time>시간대별 날씨</time></p>
+                <p><pre style="margin-top: 80px; margin-left: 220px; font-size: 20px"th:text="${weatherInfo}"></pre></p>
             </div>
     </section>
 </main>
