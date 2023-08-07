@@ -127,7 +127,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: black;
+    background: white;
     cursor: pointer;
 }
 
@@ -248,7 +248,7 @@ main2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: black;
+    background: white;
     cursor: pointer;
 }
 
