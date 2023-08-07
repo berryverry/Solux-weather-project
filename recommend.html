@@ -1,105 +1,96 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <title>RECOMMEND</title>
 
-    .top {
-      width: 100%;
-      height: 80px;
-      background-color: rgba(100, 148, 237, 0.364);
-      font-family: 'Noto Sans KR', sans-serif;
-      color: #4B6BA0;
-      font-size: 15pt;
-      font-weight: 700;
-      align-items: center;
-      justify-content: center;
-      display: flex;
-    }
+    <style>
+      .center_box{
+        width : 550px;
+        height: 380px;
+        background-color:rgb(206, 219, 244);
+        margin-left : 15%;
+        margin-right: 15%;
+        display: flex;
+      }
 
-    .weather {
-      margin-top: 20px;
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 18pt;
-      font-weight: 700;
-      color: #29374b;
-      align-items: center;
-      justify-content: center;
-      display: flex;
-    }
+      .text{
+        font-family: 'Noto Sans KR', sans-serif;
+        color : whitesmoke;
+        align-items: center;
+        justify-content: center;
+        display : flex;
+        font-size : 14pt;
+      }
 
-    .noonsong {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
+      .text_box{
+        font-family: 'Noto Sans KR', sans-serif;
+        color : black;
+        margin-top : 50%;
+        text-align: left;
+        align-items: center;
+        justify-content: center;
+        display : flex;
+      }
 
-    .text {
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 13pt;
-      font-weight: 700;
-      align-items: center;
-      justify-content: center;
-      display: flex;
-    }
+      .noonsong{
+        display :  block;
+        margin-top : 25%;
+        margin-left : auto;
+        margin-right : auto;
+        text-align: center;
+      }   
 
-    footer {
-      height: 80px;
-      background-color: rgba(100, 148, 237, 0.364);
-      width: 100%;
-      bottom: 0px;
-      position: absolute;
-    }
-  </style>
-</head>
-<body>
+      #section {
+        width : 50%;
+      }
+      
+    </style>
+  </head>
 
-<div class="top">
-  오늘의 옷을 추천해드립니다!
-</div>
+  <body>
+    <header>
+        <div class="left">
+            <a href="./0727_home_001.html"><span>⛄</span></a>
+          </div>
+          <div class="middle">
+            <span>오늘의 옷을 추천해드립니다!</span>
+          </div>
+          <div class="right">
+            <span>💬</span>
+          </div>
+        </header>
+    </header>
 
-<div class="weather">
-  <p>오늘은 (날짜) <br><span th:text="${weatherInfo}"></span></p>
-</div>
+    <main>
+      <div class = "text">
+        <p>오늘은 n월 n일</br>지금은 n도, 날씨</p>
 
-<div>
-  <div class="noonsong">
-    <img src="character_new08.png">
-  </div>
-  <div class="text">
-    <p>TOP: <span th:text="${top}"></span>
-      <br>OUTER: <span th:text="${outer}"></span>
-      <br>BOTTOM: <span th:text="${bottom}"></span> <br>POINT:</p>
-  </div>
-</div>
+      </div>
 
-<footer>
+      <div class = "center_box">
+        <section  id = "section" style = "float : left;">
+          <div class = "noonsong">
+            <img src = "character_new08.png">
+          </div>
+        </section>
+          
+        <section id = "section" style = "float : right;">
+          <div class = "text_box">
+            <p>TOP : <br>OUTER : <br>BOTTOM : <br> POINT :</p>
+          </div>
+        </section>
+          
+      </div>
 
-</footer>
+    </main>
 
-<script>
-  function submitForm() {
-    const temperatureInput = document.getElementById('temperatureInput');
-    const precipitationInput = document.getElementById('precipitationInput');
-
-    // Validate the inputs if needed
-    // ...
-
-    // Manually submit the form
-    const form = document.querySelector('form');
-    form.submit();
-  }
-</script>
-
-</body>
-</html>
-
+    <footer>
+        
+    </footer>
+  </body>
