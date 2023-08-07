@@ -1,66 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset = "utf-8">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./ootd_css.css" />
-    </head>
+<head>
+    <meta charset = "utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./ootd_css.css" />
+    <title>OOTD</title>
+</head>
+<style>
+    pre {
+        font-size: 16px; /* 원하는 글자 크기로 변경합니다. */
+        font-weight: bold; /* 원하는 글자 두께로 변경합니다. */
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+    time {
+        font-size: 16px; /* 원하는 글자 크기로 변경합니다. */
+        font-weight: bold; /* 원하는 글자 두께로 변경합니다. */
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+</style>
+<body>
+<header>
+    <div class="left">
+        <a href="./home.html"><span><img src = "./noon.png"><img src = "./home!.png"></span></a>
+    </div>
+    <div class="middle">
+        <span>날씨의 눈송</span>
+    </div>
+    <div class="right">
+        <span></span>
+    </div>
+</header>
 
-    <body>
-        <header>
-            <div class="left">
-                <a href="./home.html"><span>⛄</span></a>
+<main>
+    <section id = "section" style = "float : left;">
+        <div style = "font-size:14pt; font-weight: 700;" class = "text">
+            <p><div id="current_date">
+            <script>
+                date = new Date();
+                month = date.getMonth() + 1;
+                day = date.getDate();
+                document.getElementById("current_date").innerHTML = "오늘은 "+month + "월 " + day + "일";
+            </script></div></p>
+        </div>
+
+        <div style="font-size:11pt; font-weight: 400;;", class = "text">
+            <p><h3 th:text="${skyInfo}"></h3></p>
+        </div>
+
+        <div id = "box">
+
+            <div class = "noonsong">
+                <img src = "./character_new08.jpg">
             </div>
-            <div class="middle">
-                <span>날씨의 눈송</span>
+            <div class = "text_box">
+                <p>OUTER: <span th:text="${outer}"></span>
+                    <br>TOP: <span th:text="${top}"></span>
+                    <br>BOTTOM: <span th:text="${bottom}"></span>
+                    <br>POINT: <span th:text="${point}"></span> </p>
             </div>
-            <div class="right">
-                <span>💬</span>
+        </div>
+    </section>
+    <section id = "section" style="float : right;">
+        <div id = "box">
+            <div style="font-size:11pt; font-weight: 400;;", class = "text_box">
+                <p><time>시간대별 날씨</time></p>
+                <p><pre th:text="${weatherInfo}"></pre></p>
             </div>
-        </header>
-
-        <main>
-            <section id = "section" style = "float : left;">
-                <div style = "font-size:14pt; font-weight: 700;" class = "text">
-                    <p>TODAY 날짜</p>
-                </div>
-
-                <div style="font-size:11pt; font-weight: 400;;", class = "text">
-                    <p>지금은 몇도</p>
-                </div>
-
-                <div id = "box">
-
-                    <div class = "noonsong">
-                        <img src = "character_new08.png">
-                    </div>
-
-                    <div class = "text_box">
-                        <p>TOP : <br>OUTER : <br>BOTTOM : <br> POINT :</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id = "section" style="float : right;">
-                <div style = "font-size:14pt; font-weight: 700;" class = "text">
-                    <p>최고 highest 최저 lowest</p>
-                </div>
-                <div style="font-size:11pt; font-weight: 400;;", class = "text">
-                    <p>시간대별 날씨</p>
-                </div>
-    
-                <div id = "box">
-
-            </section>
-        </main>
-
-        <footer>
-
-        </footer>
-    </body>
+    </section>
+</main>
+<footer>
+</footer>
+</body>
 </html>
